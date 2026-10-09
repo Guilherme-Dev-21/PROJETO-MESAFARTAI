@@ -1,0 +1,56 @@
+PROJETO MESAFARTAI - REGRAS DA ETAPA 1 (AULA 08/10/2026)
+Disciplina: Machine Learning & Chatbots
+Valor da etapa: 0,25 ponto na AC-3
+
+OBJETIVO DA ETAPA
+Estabelecer as fundacoes do projeto: kickoff, documentacao, arquitetura,
+criacao do banco de dados SQLite e carga inicial de dados de teste.
+
+O QUE ESTA SENDO PEDIDO
+
+1. Organizacao do grupo e repositorio
+   - Formar grupo de 3 a 5 alunos.
+   - Criar um repositorio PUBLICO no GitHub com o nome exato PROJETO-MESAFARTAI.
+   - Adicionar todos os integrantes e o professor como colaboradores.
+
+2. README.md e pasta /docs
+   - README.md na raiz com o titulo oficial do projeto, descricao resumida
+     da solucao, alinhamento com a ODS 2 da ONU e nome completo e RA de
+     cada integrante.
+   - docs/regras.txt descrevendo o que esta sendo pedido na etapa 1
+     (este arquivo).
+   - docs/escopo_projeto.md descrevendo o problema de negocio, o
+     publico-alvo (Doadores x ONGs), o escopo das intencoes tratadas e os
+     dados coletados no chat.
+   - As imagens arquitetura_mesafartai.png e diag_fluxo_mesafartai.png
+     devem constar na pasta /docs.
+
+3. Identidade visual
+   - Criar um prompt e gerar o logotipo do sistema com um gerador de
+     imagem por IA.
+   - O logo deve unir os conceitos de alimento/acolhimento e
+     tecnologia/IA assistiva.
+   - Salvar a imagem em assets/logo_mesafartai.png.
+   - Registrar o prompt exato utilizado em docs/escopo_projeto.md.
+
+4. Banco de dados
+   - Criar o script src/database.py, que inicializa o banco SQLite3
+     mesafartai.db com as tabelas usuarios, doacoes e matches e insere a
+     carga inicial de teste (2 ONGs e 2 doadores).
+   - O script deve executar sem erros e gerar o arquivo mesafartai.db.
+
+5. Envio
+   - Enviar e-mail ao professor ate o final do horario da aula.
+   - Assunto: [MESAFARTAI] - Nome do Grupo - Turma Terca
+   - Corpo: lista dos integrantes (Nome + RGM + Curso) e link direto do
+     repositorio no GitHub.
+
+OBSERVACAO
+A etapa so tem validade e nota se for feita em sala de aula. Nao sao
+aceitas entregas online nem atividades feitas de casa.
+
+PROXIMAS ETAPAS DA FASE 1 (AC-3)
+- 15/10 (0,25): Pipeline NLU - classificacao de intencoes e trava de
+  threshold/fallback.
+- 22/10 (0,50): Extracao por Regex, algoritmo KNN de matchmaking e
+  entrega final da AC-3.
