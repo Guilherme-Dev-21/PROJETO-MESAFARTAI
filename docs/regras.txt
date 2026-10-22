@@ -120,3 +120,69 @@ CHECKLIST
    [ ] requirements.txt na raiz do repositorio.
    [ ] git add, commit e push executados e commit visivel no GitHub.
    [ ] regras.txt atualizado e relatorio de execucao criado.
+
+
+========================================================================
+PROJETO MESAFARTAI - REGRAS DA ETAPA 3 (FASE 1 - AC-3)
+Extrator de Entidades (Regex) e Matchmaking Logistico (KNN)
+Valor da etapa: 0,5 ponto na AC-3
+========================================================================
+
+OBJETIVO DA ETAPA
+Implementar o Extrator de Entidades por Regex (src/entities.py) e o
+Motor de Matchmaking Logistico por KNN (src/matchmaking.py) utilizando
+o VS Code e sincronizando as alteracoes com o GitHub.
+
+PRE-REQUISITO (DESAFIO REGEX)
+   - Script no Colab extraindo quantidade/unidade, tipo de alimento e
+     validade (dias = perecivel, meses = nao perecivel) sem uso de IA.
+   - Print enviado a flavio.santarelli@pro.fecaf.com.br com o assunto
+     [DESAFIO REGEX - ADS 4º] (um e-mail por grupo).
+   - Codigo salvo em src/desafio_regex.py.
+
+O QUE ESTA SENDO PEDIDO
+
+1. Sincronizar e preparar o repositorio no VS Code
+   - Copiar todas as instrucoes desta etapa em docs/regras.txt.
+   - Abrir a pasta PROJETO-MESAFARTAI no VS Code (terminal: code .).
+   - Baixar as atualizacoes do grupo:
+       git pull origin main
+   - Se o projeto nao estiver na maquina, voltar a aula 10 e clonar.
+   - Garantir as dependencias instaladas:
+       pip install -r requirements.txt
+
+2. Criar o extrator de entidades por Regex (src/entities.py)
+   - Classe ExtratorEntidades com:
+     - padrao_quantidade: numero (inteiro ou decimal com . ou ,)
+       seguido de kg, quilos, kilos, caixas ou sacas. Padrao 1.0 kg se
+       nao informado.
+     - vocabulario_alimentos para identificar o alimento na frase
+       (retorna "Alimentos Diversos" se nenhum for encontrado).
+     - extrair_validade: "hoje" -> data atual, "amanha" -> +1 dia,
+       caso contrario -> +3 dias (formato YYYY-MM-DD).
+     - processar_texto: retorna alimento, quantidade_kg e data_validade.
+
+3. Criar o motor de matchmaking KNN (src/matchmaking.py)
+   - Classe MotorMatchmaking que garante a tabela usuarios e insere
+     ONGs de teste caso nao existam.
+   - buscar_ongs: le todas as ONGs (id, nome, latitude, longitude) do
+     SQLite.
+   - encontrar_ong_mais_proxima: NearestNeighbors (n_neighbors=1,
+     metric='euclidean') sobre as coordenadas das ONGs; retorna a ONG
+     mais proxima do doador e a distancia aproximada em km (x 111).
+
+4. Executar e validar no terminal do VS Code
+       python src/entities.py
+       python src/matchmaking.py
+   - As saidas devem ser exibidas sem erros.
+
+5. Commit e push final para o GitHub
+       git add .
+       git commit -m "feat(logistics): implementa extracao por regex e matchmaking knn"
+       git push origin main
+
+CHECKLIST
+   [ ] Repositorio sincronizado via git pull antes de iniciar.
+   [ ] src/entities.py criado e validado no terminal sem erros.
+   [ ] src/matchmaking.py criado e validado no terminal sem erros.
+   [ ] Alteracoes enviadas ao GitHub via git push origin main.
